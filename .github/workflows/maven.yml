@@ -61,7 +61,7 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        TAG=1.$(date +'%d%m%y-%H%M')
+        TAG=v1.$(date +'%d%m%y-%H%M')
         IMAGE_NAME=${{ secrets.DOCKERHUB_USERNAME }}/banking-demo
         docker build -t $IMAGE_NAME:$TAG -f java-apps/Dockerfile java-apps
         docker push $IMAGE_NAME:$TAG
