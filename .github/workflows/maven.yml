@@ -11,7 +11,8 @@ name: Java CI with Maven
 on:
   push:
     branches: [ "main" ]
-
+    tags:
+      - "v*"
 jobs:
   build:
 
@@ -34,6 +35,5 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: target/*.jar
-        tag: ${{ github.ref }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
