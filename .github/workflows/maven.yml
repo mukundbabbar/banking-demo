@@ -40,7 +40,8 @@ jobs:
         echo "tag=$TAG" >> $GITHUB_OUTPUT
         git tag -a $TAG -m "Published version $TAG" ${GITHUB_SHA}
         git push origin $TAG
-
+        git config user.name "mukundbabbar"
+        git config user.email "mukundbabbar@gmail.com"
     - name: Upload JAR to GitHub Release
       uses: softprops/action-gh-release@v1
       with:
