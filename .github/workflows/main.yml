@@ -3,7 +3,7 @@ name: Build and Release JAR
 on:
   push:
     tags:
-      - 'v1'  # Trigger on version tags like v1.0, v1.1.2 etc.
+      - 'v*'  # Trigger on version tags like v1.0, v1.1.2 etc.
 
 jobs:
   build:
