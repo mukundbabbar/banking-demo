@@ -28,7 +28,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn clean package -DskipTests
+      run: |
+        cd java-apps
+        mvn clean package -DskipTests
 
     - name: Upload JAR to GitHub Release
       uses: softprops/action-gh-release@v1
