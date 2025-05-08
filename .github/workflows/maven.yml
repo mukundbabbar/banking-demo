@@ -39,7 +39,7 @@ jobs:
     - name: Tag the repository
       id: tag
       run: |
-        TAG=v$(date -Iseconds | sed 's/[T:\+]/-/g')
+        TAG=v1.$(date +'%d%m%y-%H%M')
         echo "$TAG"
         echo "tag=$TAG" >> $GITHUB_OUTPUT
         git tag -a $TAG -m "Published version $TAG" ${GITHUB_SHA}
